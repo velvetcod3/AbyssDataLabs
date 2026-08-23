@@ -1,0 +1,6 @@
+id,date,title,clean_text,corpus_source,sentiment_score,readability_index
+4267,2026-07-19T23:00:00Z,Freedom of Information Act 2000 (Amendment) Bill,Title: Freedom of Information Act 2000 (Amendment) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,1.95,17
+4272,2026-07-15T23:00:00Z,General Medical Council (Fitness to Practise) Rules (Amendment) Bill,Title: General Medical Council (Fitness to Practise) Rules (Amendment) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,2.2,18.17
+4268,2026-07-15T23:00:00Z,Hunting Act 2004 (Amendment) Bill,Title: Hunting Act 2004 (Amendment) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.55,15.73
+4255,2026-06-29T23:00:00Z,Water Regulation Bill,Title: Water Regulation Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,17.68
+4083,2026-06-28T23:00:00Z,Courts and Tribunals Bill,Title: Courts and Tribunals Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,15.43
