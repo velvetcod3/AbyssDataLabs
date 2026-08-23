@@ -14,26 +14,15 @@ Operating on a scheduled cloud architecture, the engine pulls raw parliamentary 
 
 ## 🏗️ Architecture & Pipeline Overview
 
-┌───────────────────────────────┐
-│  Parliamentary Data Sources   │
-└──────────────┬────────────────┘
-│ (Polite Rate-Limited Ingestion)
-▼
-┌───────────────────────────────┐
-│ GitHub Actions Runner (R)     │
-│ ├── pipeline.R                │
-│ ├── Data Extraction & Clean   │
-│ └── Schema Standardization   │
-└──────────────┬────────────────┘
-│ (Automated Sync @ 06:00 UTC)
-▼
-┌───────────────────────────────┐
-│ OpenDataBay Repositories      │
-│ ├── Sector Folders            │
-│ ├── .parquet (Analytics)      │
-│ └── .jsonl (LLM & Fine-Tuning)│
-└──────────────┴────────────────┘
-
+```mermaid
+graph TD
+    A[Parliamentary Data Sources] -->|Polite Rate-Limited Ingestion| B[GitHub Actions Cloud Runner]
+    B -->|pipeline.R Extraction & Cleaning| C[Schema Standardization]
+    C -->|Automated Daily Sync @ 06:00 UTC| D[OpenDataBay Repositories]
+    
+    D --> E[.parquet Analytics Files]
+    D --> F[.jsonl LLM & RAG Datasets]
+```
 
 ### Key Engineering Features
 * **Automated Cloud Sync:** Runs on GitHub Actions scheduled at `06:00 UTC` daily.
