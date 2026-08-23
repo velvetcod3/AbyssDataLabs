@@ -1,6 +1,6 @@
 id,date,title,clean_text,corpus_source,sentiment_score,readability_index
-4128,2026-08-13T23:00:00Z,Commercial Payments Bill [HL],Title: Commercial Payments Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,16.22
-4030,2026-08-13T23:00:00Z,Railways Bill,Title: Railways Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,15.8
-4127,2026-08-03T23:00:00Z,Sporting Events Bill [HL],Title: Sporting Events Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,15.43
-4123,2026-08-03T23:00:00Z,Steel Industry (Nationalisation) Act 2026,Title: Steel Industry (Nationalisation) Act 2026 | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,18.68
-4142,2026-07-23T23:00:00Z,Creative Education Access Bill [HL],Title: Creative Education Access Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,1.55,17.94
+4030,2026-08-21T00:00:00Z,Railways Bill,Title: Railways Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,15.8
+4143,2026-08-20T00:00:00Z,Leaseholder Remediation (Building Safety) Bill [HL],Title: Leaseholder Remediation (Building Safety) Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,1.7,19.5
+4142,2026-08-19T00:00:00Z,Creative Education Access Bill [HL],Title: Creative Education Access Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,1.55,17.94
+4140,2026-08-19T00:00:00Z,National Security (State Threats) Act 2026,Title: National Security (State Threats) Act 2026 | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.05,16.72
+4123,2026-08-19T00:00:00Z,Steel Industry (Nationalisation) Act 2026,Title: Steel Industry (Nationalisation) Act 2026 | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,18.68
