@@ -2,52 +2,33 @@ name: OpenDataBay Daily Data Engine
 
 on:
   schedule:
-    # Runs automatically every day at 06:00 UTC
-    - cron: '0 6 * * *'
-  # Allows manual triggers anytime from GitHub
-  workflow_dispatch:
+    - cron: '0 6 * * *'  # Runs daily at 06:00 UTC
+  workflow_dispatch:      # Allows manual trigger button
 
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up R
+      - name: Setup R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: 'release'
-
-      - name: Install System Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
-
-      - name: Cache R Packages
-        uses: actions/cache@v3
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ubuntu-r-${{ hashFiles('**/pipeline.R') }}
-          restore-keys: |
-            ubuntu-r-
+          use-public-rspm: true # Forces fast binary package downloads
 
       - name: Install R Dependencies
-        run: |
-          Rscript -e '
-            packages <- c("dplyr", "stringr", "httr", "jsonlite", "tibble", "syuzhet", "quanteda", "quanteda.textstats", "arrow", "readr", "knitr")
-            new_packages <- packages[!(packages %in% installed.packages()[,"Package"])]
-            if(length(new_packages)) install.packages(new_packages, repos="https://cloud.r-project.org")
-          '
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache-version: 1
 
-      - name: Run Pipeline Script
+      - name: Run Scraper Pipeline
         run: Rscript pipeline.R
 
-      - name: Commit and Push Updated Data Feeds
+      - name: Commit and Push Updated Data
         run: |
-          git config --global user.name "OpenDataBay Bot"
-          git config --global user.email "bot@opendatabay.co.uk"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Automated Daily Data Refresh [$(date -u +'%Y-%m-%d %H:%M UTC')]" || echo "No changes to commit"
+          git diff --staged --quiet || git commit -m "auto: daily data refresh [skip ci]"
           git push
