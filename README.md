@@ -1,0 +1,87 @@
+
+# AbyssDataLabs: OpenDataBay Parliamentary Data Engine 🏛️⚡
+
+[![OpenDataBay Daily Data Engine](https://github.com/velvetcod3/AbyssDataLabs/actions/workflows/daily_scrape.yml/badge.svg)](https://github.com/velvetcod3/AbyssDataLabs/actions/workflows/daily_scrape.yml)
+![Data Format](https://img.shields.io/badge/Format-Parquet%20%7C%20JSONL-blue.svg)
+![Update Frequency](https://img.shields.io/badge/Update-Daily%2006%3A00%20UTC-success.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
+**OpenDataBay** is an automated data pipeline designed to monitor, extract, and structure parliamentary sector legislation and public sector intelligence.
+
+Operating on a scheduled cloud architecture, the engine pulls raw parliamentary structures daily, parses metadata, enriches sector taxonomies, and publishes production-ready datasets directly to this repository.
+
+---
+
+## 🏗️ Architecture & Pipeline Overview
+
+┌───────────────────────────────┐
+│  Parliamentary Data Sources   │
+└──────────────┬────────────────┘
+│ (Polite Rate-Limited Ingestion)
+▼
+┌───────────────────────────────┐
+│ GitHub Actions Runner (R)     │
+│ ├── pipeline.R                │
+│ ├── Data Extraction & Clean   │
+│ └── Schema Standardization   │
+└──────────────┬────────────────┘
+│ (Automated Sync @ 06:00 UTC)
+▼
+┌───────────────────────────────┐
+│ OpenDataBay Repositories      │
+│ ├── Sector Folders            │
+│ ├── .parquet (Analytics)      │
+│ └── .jsonl (LLM & Fine-Tuning)│
+└──────────────┴────────────────┘
+
+
+### Key Engineering Features
+* **Automated Cloud Sync:** Runs on GitHub Actions scheduled at `06:00 UTC` daily.
+* **Polite Ingestion:** Engineered with intentional request throttling to ensure respectful, low-impact API and web extraction.
+* **Dual-Format Delivery:**
+  * **`.parquet`**: High-performance columnar storage ideal for DuckDB, Pandas, and Tidyverse analytics.
+  * **`.jsonl`**: Line-delimited JSON formatted specifically for LLM training pipelines, RAG context windows, and streaming.
+
+---
+
+## 📂 Sector Modules
+
+Datasets are partitioned into dedicated sector modules:
+
+| Sector Directory | Description | Formats |
+| :--- | :--- | :--- |
+| `tech_ai_cyber/` | Technology policy, AI regulation, and cybersecurity initiatives | `.parquet` / `.jsonl` |
+| `healthcare_nhs/` | Public health legislation, NHS policy, and medical procurement | `.parquet` / `.jsonl` |
+| `defense_procurement/` | Defense spending, military strategy, and security bills | `.parquet` / `.jsonl` |
+| `energy_climate/` | Net-zero policy, green energy, and environmental regulation | `.parquet` / `.jsonl` |
+| `finance_economy/` | Economic reform, fiscal budgets, and trade frameworks | `.parquet` / `.jsonl` |
+
+---
+
+## 🚀 Quickstart Data Access
+
+### Python (Pandas / DuckDB)
+```python
+import pandas as pd
+
+url = "[https://raw.githubusercontent.com/velvetcod3/AbyssDataLabs/main/tech_ai_cyber/tech_ai_cyber.parquet](https://raw.githubusercontent.com/velvetcod3/AbyssDataLabs/main/tech_ai_cyber/tech_ai_cyber.parquet)"
+df = pd.read_parquet(url)
+
+print(f"Total Records: {len(df)}")
+print(df.head())
+
+library(arrow)
+library(dplyr)
+
+url <- "[https://raw.githubusercontent.com/velvetcod3/AbyssDataLabs/main/tech_ai_cyber/tech_ai_cyber.parquet](https://raw.githubusercontent.com/velvetcod3/AbyssDataLabs/main/tech_ai_cyber/tech_ai_cyber.parquet)"
+df <- read_parquet(url)
+
+glimpse(df)
+
+---
+
+## ⚖️ License & Compliance
+
+Distributed under the MIT License. Data sourced from parliamentary public records and made available for commercial, academic, and LLM applications.
+
+**Compliance Notice:** All collected records consist strictly of public domain parliamentary filings and contain zero Personally Identifiable Information (PII).
