@@ -15,10 +15,10 @@ Operating on a scheduled cloud architecture, the engine pulls raw parliamentary 
 ## 🏗️ Architecture & Pipeline Overview
 
 ```mermaid
-graph LR
-    A[Parliamentary Data Sources] -->|Polite Rate-Limited Ingestion| B[GitHub Actions Runner]
-    B -->|pipeline.R Extraction & Cleaning| C[Schema Standardization]
-    C -->|Automated Daily Sync @ 06:00 UTC| D[OpenDataBay Repositories]
+graph TD
+    A[Parliamentary Data Sources] -->|Polite Ingestion| B[GitHub Actions Runner]
+    B -->|pipeline.R Extraction| C[Schema Standardization]
+    C -->|Sync @ 06:00 UTC| D[OpenDataBay Repositories]
     
     D --> E[.parquet Analytics Files]
     D --> F[.jsonl LLM & RAG Datasets]
