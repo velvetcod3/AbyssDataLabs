@@ -15,8 +15,8 @@ Operating on a scheduled cloud architecture, the engine pulls raw parliamentary 
 ## 🏗️ Architecture & Pipeline Overview
 
 ```mermaid
-graph TD
-    A[Parliamentary Data Sources] -->|Polite Rate-Limited Ingestion| B[GitHub Actions Cloud Runner]
+graph LR
+    A[Parliamentary Data Sources] -->|Polite Rate-Limited Ingestion| B[GitHub Actions Runner]
     B -->|pipeline.R Extraction & Cleaning| C[Schema Standardization]
     C -->|Automated Daily Sync @ 06:00 UTC| D[OpenDataBay Repositories]
     
@@ -50,6 +50,7 @@ Datasets are partitioned into dedicated sector modules:
 ## 🚀 Quickstart Data Access
 
 ### Python (Pandas / DuckDB)
+
 ```python
 import pandas as pd
 
@@ -58,7 +59,11 @@ df = pd.read_parquet(url)
 
 print(f"Total Records: {len(df)}")
 print(df.head())
+```
 
+### R (Tidyverse)
+
+```
 library(arrow)
 library(dplyr)
 
@@ -66,7 +71,7 @@ url <- "[https://raw.githubusercontent.com/velvetcod3/AbyssDataLabs/main/tech_ai
 df <- read_parquet(url)
 
 glimpse(df)
-
+```
 ---
 
 ## ⚖️ License & Compliance
