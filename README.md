@@ -6,7 +6,7 @@
 ![Update Frequency](https://img.shields.io/badge/Update-Daily%2006%3A00%20UTC-success.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-**OpenDataBay** is an automated data pipeline designed to monitor, extract, and structure parliamentary sector legislation and public sector intelligence.
+**OpenDataBay** is an automated data pipeline designed to monitor, extract, and structure **UK Parliamentary** sector legislation and public sector intelligence.
 
 Operating on a scheduled cloud architecture, the engine pulls raw parliamentary structures daily, parses metadata, enriches sector taxonomies, and publishes production-ready datasets directly to this repository.
 
@@ -37,14 +37,14 @@ graph TD
 
 Datasets are partitioned into dedicated sector modules:
 
+
 | Sector Directory | Description | Formats |
 | :--- | :--- | :--- |
-| `tech_ai_cyber/` | Technology policy, AI regulation, and cybersecurity initiatives | `.parquet` / `.jsonl` |
-| `healthcare_nhs/` | Public health legislation, NHS policy, and medical procurement | `.parquet` / `.jsonl` |
-| `defense_procurement/` | Defense spending, military strategy, and security bills | `.parquet` / `.jsonl` |
-| `energy_climate/` | Net-zero policy, green energy, and environmental regulation | `.parquet` / `.jsonl` |
-| `finance_economy/` | Economic reform, fiscal budgets, and trade frameworks | `.parquet` / `.jsonl` |
-
+| `tech_ai_cyber/` | UK technology policy, AI regulation, and cybersecurity initiatives | `.parquet` / `.jsonl` |
+| `healthcare_nhs/` | UK public health legislation, NHS policy, and medical procurement | `.parquet` / `.jsonl` |
+| `defense_procurement/` | UK Ministry of Defence spending, military strategy, and security bills | `.parquet` / `.jsonl` |
+| `energy_climate/` | UK net-zero policy, green energy, and environmental regulation | `.parquet` / `.jsonl` |
+| `finance_economy/` | UK economic reform, HM Treasury fiscal budgets, and trade frameworks | `.parquet` / `.jsonl` |
 ---
 
 ## 🚀 Quickstart Data Access
@@ -78,4 +78,4 @@ glimpse(df)
 
 Distributed under the MIT License. Data sourced from parliamentary public records and made available for commercial, academic, and LLM applications.
 
-**Compliance Notice:** All collected records consist strictly of public domain parliamentary filings and contain zero Personally Identifiable Information (PII).
+**Compliance Notice:** All collected records consist strictly of public domain UK Parliamentary filings and contain zero Personally Identifiable Information (PII).
