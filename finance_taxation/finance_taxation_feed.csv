@@ -1,5 +1,5 @@
 id,date,title,clean_text,corpus_source,sentiment_score,readability_index
-4129,2026-08-25T00:00:00Z,Financial Services and Markets Bill [HL],Title: Financial Services and Markets Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.9,16.72
+4129,2026-08-27T00:00:00Z,Financial Services and Markets Bill [HL],Title: Financial Services and Markets Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.9,16.72
 4207,2026-08-19T00:00:00Z,Taxation (Energy and Vehicles) Act 2026,Title: Taxation (Energy and Vehicles) Act 2026 | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,17.42
 4225,2026-06-25T00:00:00Z,Children’s Clothing (Value Added Tax) Bill,Title: Children’s Clothing (Value Added Tax) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.55,16.03
 4229,2026-06-25T00:00:00Z,Domestic Energy (Value Added Tax) Bill,Title: Domestic Energy (Value Added Tax) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.3,17.42
