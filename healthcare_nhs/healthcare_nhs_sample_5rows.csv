@@ -1,5 +1,5 @@
 id,date,title,clean_text,corpus_source,sentiment_score,readability_index
-4124,2026-07-20T00:00:00Z,Health Bill,Title: Health Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,14.9
+4124,2026-08-28T00:00:00Z,Health Bill,Title: Health Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,14.9
 4272,2026-07-16T00:00:00Z,General Medical Council (Fitness to Practise) Rules (Amendment) Bill,Title: General Medical Council (Fitness to Practise) Rules (Amendment) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,2.2,18.17
 4149,2026-07-06T00:00:00Z,Mental Health Support (Sentence of Detention and Imprisonment for Public Protection) Bill [HL],Title: Mental Health Support (Sentence of Detention and Imprisonment for Public Protection) Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,1.1,18.35
 4257,2026-07-02T00:00:00Z,Medical Services (Rural Areas) Bill,Title: Medical Services (Rural Areas) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,18.68
