@@ -1,6 +1,6 @@
 id,date,title,clean_text,corpus_source,sentiment_score,readability_index
-4125,2026-09-02T00:00:00Z,Civil Aviation (Consumer Protection and Regulatory Reform) Bill [HL],Title: Civil Aviation (Consumer Protection and Regulatory Reform) Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,2.4,20.53
-4250,2026-09-02T00:00:00Z,Fur (Import and Sale) Bill,Title: Fur (Import and Sale) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,14.25
-4156,2026-09-02T00:00:00Z,"Infants, Parents and Carers Bill","Title: Infants, Parents and Carers Bill | Summary: No summary available | Description: No description available",UK_Parliament_Bills_Enriched_Corpus,0.8,15.73
-4019,2026-09-02T00:00:00Z,Public Office (Accountability) Bill,Title: Public Office (Accountability) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,1.6,19.37
-4277,2026-09-02T00:00:00Z,Registration of Stillbirths (England and Wales) Bill,Title: Registration of Stillbirths (England and Wales) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,-0.2,16.34
+4125,2026-09-03T00:00:00Z,Civil Aviation (Consumer Protection and Regulatory Reform) Bill [HL],Title: Civil Aviation (Consumer Protection and Regulatory Reform) Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,2.4,20.53
+4276,2026-09-03T00:00:00Z,Home Cooling Bill,Title: Home Cooling Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,15.16
+4080,2026-09-03T00:00:00Z,Representation of the People Bill,Title: Representation of the People Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,17.2
+4126,2026-09-03T00:00:00Z,Social Housing Bill [HL],Title: Social Housing Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,15.43
+4280,2026-09-03T00:00:00Z,Sovereign Grant Bill,Title: Sovereign Grant Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,1.3,15.16
