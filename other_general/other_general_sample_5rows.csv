@@ -1,6 +1,6 @@
 id,date,title,clean_text,corpus_source,sentiment_score,readability_index
+4258,2026-09-04T00:00:00Z,Controlled Drugs (Procedure for Specification) Bill,Title: Controlled Drugs (Procedure for Specification) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,1.2,18.11
 4262,2026-09-04T00:00:00Z,Early Release of Prisoners (Restriction) Bill,Title: Early Release of Prisoners (Restriction) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,-0.75,17.42
 4156,2026-09-04T00:00:00Z,"Infants, Parents and Carers Bill","Title: Infants, Parents and Carers Bill | Summary: No summary available | Description: No description available",UK_Parliament_Bills_Enriched_Corpus,0.8,15.73
-4080,2026-09-04T00:00:00Z,Representation of the People Bill,Title: Representation of the People Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,17.2
-4127,2026-09-04T00:00:00Z,Sporting Events Bill [HL],Title: Sporting Events Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,15.43
-4125,2026-09-03T00:00:00Z,Civil Aviation (Consumer Protection and Regulatory Reform) Bill [HL],Title: Civil Aviation (Consumer Protection and Regulatory Reform) Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,2.4,20.53
+4131,2026-09-04T00:00:00Z,Nature’s Rights Bill [HL],Title: Nature’s Rights Bill [HL] | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,0.8,15.43
+4019,2026-09-04T00:00:00Z,Public Office (Accountability) Bill,Title: Public Office (Accountability) Bill | Summary: No summary available | Description: No description available,UK_Parliament_Bills_Enriched_Corpus,1.6,19.37
