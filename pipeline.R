@@ -179,7 +179,7 @@ cat("Exporting master corpus files...\n")
 # Master JSONL
 con <- file("uk_parliament_master_enriched.jsonl", open = "w")
 for(i in seq_len(nrow(clean_corpus))) {
-  writeLines(jsonlite::toJSON(clean_corpus[i, ], auto_unbox = TRUE), con)
+  writeLines(jsonlite::toJSON(subfeed_df[k, ], auto_unbox = TRUE, collapse = ""), con_sec)
 }
 close(con)
 

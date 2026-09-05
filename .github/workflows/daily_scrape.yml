@@ -1,34 +1,51 @@
-name: OpenDataBay Daily Data Engine
+name: Daily Hansard Data Refresh
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Runs daily at 06:00 UTC
-  workflow_dispatch:      # Allows manual trigger button
+    # Runs Monday–Friday at 08:30 AM UTC (After TheyWorkForYou publishes overnight XML)
+    - cron: '30 8 * * 1-5'
+  workflow_dispatch: # Allows manual trigger anytime from GitHub UI
 
 jobs:
-  build-and-run:
+  refresh-hansard:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup R
+      - name: Setup R Environment
         uses: r-lib/actions/setup-r@v2
         with:
-          use-public-rspm: true # Forces fast binary package downloads
+          r-version: '4.3.2'
 
-      - name: Install R Dependencies
-        uses: r-lib/actions/setup-r-dependencies@v2
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxml2-dev libcurl4-openssl-dev libssl-dev
+
+      - name: Cache R Packages
+        uses: actions/cache@v4
         with:
-          cache-version: 1
+          path: ~/.local/share/renv
+          key: ${{ runner.os }}-r-4.3.2-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-r-4.3.2-
 
-      - name: Run Scraper Pipeline
+      - name: Install R Dependencies Fast
+        run: |
+          options(repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/jammy/latest"))
+          install.packages(c("httr", "httr2", "xml2", "dplyr", "stringr", "jsonlite", "arrow"))
+        shell: Rscript {0}
+
+      - name: Run Ingestion & Vector Pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: Rscript pipeline.R
 
-      - name: Commit and Push Updated Data
+      - name: Commit and Push Clean Sector Data
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git diff --staged --quiet || git commit -m "auto: daily data refresh [skip ci]"
-          git push
+          git add defense_procurement/ energy_climate/ finance_taxation/ healthcare_nhs/ legal_statutory/ other_general/ tech_ai_cyber/
+          git diff --staged --quiet || (git commit -m "auto: daily data refresh [skip ci]" && git push)
