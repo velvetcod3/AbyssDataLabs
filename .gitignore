@@ -2,3 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# Ignore generated data feeds to prevent merge conflicts
+*.parquet
+*.csv
+*.jsonl
